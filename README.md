@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 
 ## Running Tests
-
+Primeiro deve ativar um ambiente virtual Python (venv): venv\Scripts\activate
 To run the tests:
 ```bash
 pytest tests/
