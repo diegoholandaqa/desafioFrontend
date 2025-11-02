@@ -35,9 +35,7 @@ class PracticeFormPage(BasePage):
 
     def open_page(self):
         self.open(self.URL)
-        # fecha os ads/footers quando se está usando JS, encontrei isso e achei útil
-        self.execute_script("document.querySelector('footer').style.display='none';")
-        self.execute_script("document.getElementById('fixedban')?.remove();")
+
 
     def fill_name(self, first, last):
         self.send_keys(self.FIRST_NAME, first)
@@ -92,6 +90,8 @@ class PracticeFormPage(BasePage):
         # percorre e clica no que corresponde ao texto desejado
         for label in hobby_labels:
             if label.text.strip().lower() == hobby_text.strip().lower():
+                #scroll até o elemento antes de clicar
+                self.driver.execute_script("arguments[0].scrollIntoView(true);", label)
                 label.click()
                 return
 

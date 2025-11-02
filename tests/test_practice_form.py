@@ -51,6 +51,6 @@ def test_submit_practice_form(driver):
     assert modal_data.get("State and City") == "NCR Delhi"
 
     # pausar para visualização manual
-    time.sleep(10)
+    time.sleep(3)
 
     page.close_modal()
